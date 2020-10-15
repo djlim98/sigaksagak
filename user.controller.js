@@ -50,6 +50,7 @@ exports.create = (req, res) => {
     crypto.pbkdf2(userInfo.PASSWORD, salt, 100000, 64, 'sha512', (encryptErr, derivedKey) => {
       if (encryptErr) { throw encryptErr; }
       userInfo.PASSWORD = derivedKey.toString('hex');
+      
       userInfo.SALT = salt;
 
       User.create(userInfo, (sqlErr, data) => {
