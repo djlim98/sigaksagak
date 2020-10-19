@@ -51,7 +51,7 @@ exports.create = (req, res) => {
       if (encryptErr) { throw encryptErr; }
       userInfo.PASSWORD = derivedKey.toString('hex');
       
-      userInfo.SALT = salt;
+     
 
       User.create(userInfo, (sqlErr, data) => {
         if (sqlErr) {
