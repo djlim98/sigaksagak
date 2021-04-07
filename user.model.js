@@ -1,5 +1,6 @@
 const sql = require('../db');
 
+
 class User {
   constructor(user) {
     this.USER_ID = user.USER_ID;
